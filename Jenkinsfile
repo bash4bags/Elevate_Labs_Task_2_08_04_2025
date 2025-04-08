@@ -2,10 +2,10 @@ pipeline{
     agent any
 
     stages {
-        stage('Checkout'){
-            steps{
-                echo 'fetching code form github...'
-                git 'https://github.com/bash4bags/Elevate_Labs_Task_2_08_04_2025'
+        stage('Checkout')stage('Checkout') {
+            steps {
+                git branch: 'main',
+                     url: 'https://github.com/bash4bags/Elevate_Labs_Task_2_08_04_2025.git'
             }
         }
 

@@ -30,7 +30,7 @@ pipeline{
             sh 'docker run -d -p 80:80 myapp'
         }
     }
-
+                }
     post{
         success{
             echo 'Pipeline completed successfully'
@@ -38,6 +38,5 @@ pipeline{
         failure{
             echo 'Pipeline failed'
         }
-    }
     }
 }

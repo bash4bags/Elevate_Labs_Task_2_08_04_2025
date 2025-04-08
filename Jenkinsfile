@@ -1,12 +1,5 @@
 pipeline {
     agent any
-    tools {
-        dockerTool 'docker'  // Use the managed Docker installation named 'docker'
-    }
-    environment {
-        DOCKER_IMAGE = 'myapp'
-        DOCKER_PORT = '80'
-    }
     stages {
         stage('Checkout') {
             steps {

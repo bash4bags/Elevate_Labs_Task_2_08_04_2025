@@ -31,17 +31,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying the application...'
-                script {
-                    // Build Docker image
-                    sh "docker build -t ${env.DOCKER_IMAGE} ."
-                    
-                    // Stop and remove any existing container
-                    sh "docker stop ${env.DOCKER_IMAGE} || true"
-                    sh "docker rm ${env.DOCKER_IMAGE} || true"
-                    
-                    // Run new container
-                    sh "docker run -d -p ${env.DOCKER_PORT}:${env.DOCKER_PORT} --name ${env.DOCKER_IMAGE} ${env.DOCKER_IMAGE}"
-                }
+                
             }
         }
     }
